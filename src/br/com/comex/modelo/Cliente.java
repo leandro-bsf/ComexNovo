@@ -1,17 +1,23 @@
 package br.com.comex.modelo;
 
 public class Cliente {
-  private int Id ;
+  int Id ;
   String Nome , Cpf, Telefone , Rua,Numero,Complemento, Bairro, Cidade ;
   Status status;
   Estados ufs;
   
-  public Cliente( String nome, String cpf, String telefone, String rua, String numero, String complemento,
-			String bairro, String cidade, Estados estado, Status status) {
+  public void setId(int id) {
+	Id = id;
+}
+
+
+
+public Cliente( String nome, String cpf, String telefone, String rua, String numero, String complemento,
+			String bairro, String cidade, Estados estado) {
 		super();
 		   numero = numero.toUpperCase();
 		 
-		  if(nome.length() <= 5 || nome == null) {
+		/*  if(nome.length() <= 5 || nome == null) {
 			  throw new IllegalArgumentException("nome deve ter mais 5 caracteres");
 			  
 		  }
@@ -35,7 +41,7 @@ public class Cliente {
 		  if(cidade.length() <=   1 ) {
 			  throw new IllegalArgumentException("Cidade deve ter mais  que 1 caracterer");
 			  
-		  }
+		  }*/
 		 
 		Nome = nome;
 		Cpf = cpf;
@@ -50,10 +56,32 @@ public class Cliente {
 		this.status = status;
 	}
 
-	public Cliente(String string, String string2, String string3, String string4, String string5, String string6,
-		String string7, String string8, String string9) {
-	// TODO Auto-generated constructor stub
+	
+public Cliente(int id) {
+	this.Id  = id;
 }
+
+
+
+	public Cliente(int id ,String nome, String cpf, String telefone, String rua, String numero, String complemento, String bairro,
+		String cidade) {
+	super();
+	Nome = nome;
+	Cpf = cpf;
+	Telefone = telefone;
+	Rua = rua;
+	Numero = numero;
+	Complemento = complemento;
+	Bairro = bairro;
+	Cidade = cidade;
+	//this.ufs = ufs;
+}
+	public Cliente () {
+		
+	}
+
+
+
 
 	public int getId() {
 	return Id;
@@ -118,5 +146,32 @@ public void PrintCliente() {
 	System.out.println("Cliente Inserido!\n");
 	
 }
+public String toString() {
+
+	
+	return String.format("ID: %s  - Nome: %S cpf: %s  - telefone: %S - rua: %f  numero: %s complemento: %d   bairro: %s cidade: %s  UF: %s",
+			this.Id , getNome() , this.Cpf ,this.Telefone,
+     this.Rua,this.Numero, this.Complemento , this.Bairro , this.Cidade , this.ufs);
+
+	}
+
+
+
+public void setNome(String nome) {
+	Nome = nome;
+}
+
+
+
+public void setTelefone(String telefone) {
+	Telefone = telefone;
+}
+
+
+
+
+
+
+
 
 }

@@ -2,77 +2,51 @@ package br.com.comex.modelo;
 
 public class Produto {
 		protected int id ;
-		protected static int cont;
+	
 		protected  int quantidade;
 		protected String Nome, Descricao;
 		protected Float Preco;
 		Categoria categoria;
+		 private String tipo = "inativa";
 		
 		
-		public Produto( String nome, String descricao, Float preco,int quantidade , Categoria categoria) {
-			++cont;
-			this.id = cont;
-			 if(id != cont) {
-				  throw new IllegalArgumentException("Numero do id nao pode ser diferente que:  " +cont); 
-			  }
-			 if(quantidade < 1) {
-				  throw new IllegalArgumentException("Quantidade deve ser maior que 0!");
-				  
-			  }
-			  if(nome.length() <= 5 || nome == null) {
-				  throw new IllegalArgumentException("Descricao deve ter mais que 5 caracteres e nao pode ser NULL");
-				  
-			  }
-			  if(preco == 0.0) {
-				  throw new IllegalArgumentException("Valor deve ser maior que 0!");
-				  
-			  }
-			 
-			  if(categoria  == null ) {
-				  throw new IllegalArgumentException("O Produto deve ter uma categoria!");
-				  
-			  }
-			
+		public String getStatus() {
+			return tipo;
+		}
+		public void setStatus(String tipo) {
+			this.tipo = tipo;
+		}
+		public Produto( String nome, String descricao, Float preco,int quantidade , Categoria categoria,String status) {
+		
 			this.quantidade = quantidade;
 			Nome = nome;
 			Descricao = descricao;
 			Preco = preco;
-			this.categoria = categoria;
+		
+			//this.categoria = categoria;
+			this.tipo =  status;
 		}
-		public Produto(int id, int quantidade, String nome, String descricao, Float preco, Categoria categoria) {
-			++cont;
-			 if(id != cont) {
-				  throw new IllegalArgumentException("Numero do id nao pode ser diferente que:  " +cont); 
-			  }
-			 if(quantidade < 1) {
-				  throw new IllegalArgumentException("Quantidade deve ser maior que 0!");
-				  
-			  }
-			  if(nome.length() <= 5 || nome == null) {
-				  throw new IllegalArgumentException("Descricao deve ter mais que 5 caracteres e nao pode ser NULL");
-				  
-			  }
-			  if(preco == 0.0) {
-				  throw new IllegalArgumentException("Valor deve ser maior que 0!");
-				  
-			  }
-			 
-			  if(categoria  == null ) {
-				  throw new IllegalArgumentException("O Produto deve ter uma categoria!");
-				  
-			  }
+		public Produto(int id , String nome, String descricao, Float preco,int quantidade , int id_categoria,String status) {
 			this.id = id;
 			this.quantidade = quantidade;
 			Nome = nome;
 			Descricao = descricao;
 			Preco = preco;
-			this.categoria = categoria;
+			//this.categoria = categoria;
+			this.tipo =  status;
+		}
+		
+		
+		
+		public Produto(int int1, String string, String string2, float float1, int int2, Categoria categoria2,
+				String string3) {
+			// TODO Auto-generated constructor stub
 		}
 		public int getId() {
 			return id;
 		}
-		public void setId(int id) {
-			this.id = id;
+		public void setId(long l) {
+			this.id = (int) l;
 		}
 		public int getQuantidade() {
 			return quantidade;
@@ -124,6 +98,34 @@ public class Produto {
 			 System.out.println();
 
 		}
+	
+         
 		 
-		 
+	
+		public String getTipo() {
+			return tipo;
+		}
+		public void setTipo(String tipo) {
+			this.tipo = tipo;
+		}
+		public void setId(int id) {
+			this.id = id;
+		}
+		public void setPreco(Float preco) {
+			Preco = preco;
+		}
+		@Override
+		public String toString() {
+		
+		return "ID " + getId() 
+        + "| Nome: " + getNome() + " " 
+       + "| Descrição: " + getDescricao() + " "
+        + "| Preço: " + this.Preco + " "
+        + "| Quantidade: " + this.quantidade + " "
+        + "| Categoria: " +  getCategoria() + " "
+       +System.lineSeparator();
+		}
+	
+		
+		
 }
