@@ -10,7 +10,8 @@ import br.com.comex.ConnectionFactory.ConnectionFactory;
 
 import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Estados;
-import br.com.comex.pedidoDao.pedidoDao;
+import br.com.comex.pedidoDao.PedidoDao;
+
 
 
 public class inserePedido {
@@ -30,7 +31,7 @@ public class inserePedido {
 			clienteDao.insereCliente(Dioavana);
 		
 		
-			pedidoDao P1 = new  pedidoDao(conexao);
+			PedidoDao P1 = new  PedidoDao(conexao);
 			P1.inserePedido("17/10/2022", Dioavana);
 			
 			conexao.close();
