@@ -1,4 +1,6 @@
-package br.com.comex.ClienteDao;
+opackage ClienteDao;
+
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.comex.modelo.Cliente;
+import modelo.Cliente;
+import modelo.Estados;
 
 
 public class ClienteDao {
@@ -35,21 +38,14 @@ public class ClienteDao {
 		ResultSet rs = comando.getGeneratedKeys();
 		rs.next();
 		cliente.setId(rs.getInt(1));
-		System.out.println("Cliente"+ cliente.getNome()+ " Inserido com sucesso");
+		System.out.println("Cliente  "+ cliente.getNome()+ " Inserido com sucesso");
 		comando.close();
 		
 	}
-	public void ExcluirCliente(int id) throws SQLException {
-		PreparedStatement stm = conexao.prepareStatement("delete from comex.Cliente where  id = ?");
-		stm.setInt(1, id);
-		stm.execute();
-		Integer linhasModificada = stm.getUpdateCount();
-	 	System.out.println(linhasModificada+" Registro excluidos!");
-	 	stm.close();
-		 
-	}
+	
 	
 	public List<Cliente> listaTodas() throws SQLException{
+		
 		PreparedStatement comandoPreparado = conexao.prepareStatement("select *from comex.cliente");
    	 List<Cliente> clientes = new ArrayList<Cliente>();
    	 ResultSet registro = comandoPreparado.executeQuery();
@@ -58,32 +54,76 @@ public class ClienteDao {
    	 }
    	 
    	registro.close();
-   	comandoPreparado.close();
+   //	comandoPreparado.close();
 	return clientes;
    	 
    }
 	private Cliente populaListaClientes(ResultSet registro) throws SQLException {
-		  Cliente cliente = new Cliente (
-				  registro.getInt("ID"),
-				  registro.getString("NOME"),
-				  registro.getString("CPF"),
-				  registro.getString("TELEFONE"),
-				  registro.getString("RUA"),
-				  registro.getString("NUMERO"),
-				  registro.getString("COMPLEMENTO"),
-				  registro.getString("BAIRRO"),
-				  registro.getString("CIDADE"),
-				  registro.getString("UF")
+		 
+		try {Cliente cliente = new Cliente (
+				  registro.getString("Nome"),
+				  registro.getString("cpf"),
+				  registro.getString("telefone"),
+				  registro.getString("rua"),
+				  registro.getString("numero"),
+				  registro.getString("complemento"),
+				  registro.getString("bairro"),
+				  registro.getString("cidade"),
+				  Estados.valueOf((registro.getString("UF")))
 				  );
 				cliente.setId(registro.getInt("id"));  
-		return cliente;
+		return cliente;} catch (Exception erro) {
+			System.out.println("Erro "+ erro);
+			return null;
+		}
 	}
-	public void ExcluirCategoria(int i) throws SQLException {
-		 PreparedStatement stm = conexao.prepareStatement("DELETE FROM COMEX.CATEGORIA WHERE STATUS = 'INATIVA' ");
+	public void ExcluirCliente(int id) throws SQLException {
+		String sql = "DELETE FROM COMEX.Cliente WHERE id = ? ";
+		 PreparedStatement stm = conexao.prepareStatement(sql);
+		    stm.setInt(1, id);
 	 		stm.execute();
 	 		Integer linhasModificada = stm.getUpdateCount();
 	 		System.out.println(linhasModificada+" Registro excluidos!");
 	 		stm.close();
+		
+	}
+	public void atualizar(Cliente cliente) throws SQLException {
+   	 String sql = "update comex.categoria set descricao = ?  status = ?";
+   	 PreparedStatement ps = conexao.prepareStatement(sql);
+   	 ps.setString(1, cliente.getNome());
+   	 ps.setString(2, cliente.getTelefone());
+   	 ps.execute();
+   	 ps.close();
+   			 
+   	
+   }
+	public Cliente buscarPorID(int id) throws SQLException {
+		String sql = "select *from comex.cliente where id = ?";
+		try(PreparedStatement ps = this.conexao.prepareStatement(sql)){
+			ps.setInt(1, id);
+			
+				try(ResultSet registro = ps.executeQuery()){
+					Cliente cliente = null;
+					if(registro.next()) {
+						cliente = this.populaListaClientes(registro);
+					}
+					return cliente;
+				}
+			
+		}
+		 
+		
+	}
+	public void altera(Cliente cliente) throws SQLException {
+		 String sql = "update comex.cliente set nome = ?, telefone = ? where id = ?";
+
+		 PreparedStatement ps = conexao.prepareStatement(sql);
+		 ps.setString(1, cliente.getNome());
+		 ps.setString(2, cliente.getTelefone());
+		 ps.setInt(3, cliente.getId());
+		 ps.execute();
+		 ps.close();
+		 System.out.println("Cliente atualizado com sucesso!");
 		
 	}
 

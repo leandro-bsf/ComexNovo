@@ -37,8 +37,9 @@ public class Produto {
 		}
 		
 		
-		public Produto(int int1, String string, String string2, String string3, String string4, String string5,
-				String string6, String string7, String string8, String string9, String string10) {
+		
+		public Produto(int int1, String string, String string2, float float1, int int2, Categoria categoria2,
+				String string3) {
 			// TODO Auto-generated constructor stub
 		}
 		public int getId() {
@@ -97,14 +98,34 @@ public class Produto {
 			 System.out.println();
 
 		}
+	
+         
+		 
+	
+		public String getTipo() {
+			return tipo;
+		}
+		public void setTipo(String tipo) {
+			this.tipo = tipo;
+		}
+		public void setId(int id) {
+			this.id = id;
+		}
+		public void setPreco(Float preco) {
+			Preco = preco;
+		}
 		@Override
 		public String toString() {
-		// TODO Auto-generated method stub
-		return String.format("ID: %s  - Nome: %S  - DEscricao: %S - Valor: %f  Quantidade: %s Categoria: %d   Tipo: %s",
-				this.id , this.Nome , this.Descricao ,this.Preco,
-         this.getCategoria().getId(), this.tipo);
-
+		
+		return "ID " + getId() 
+        + "| Nome: " + getNome() + " " 
+       + "| Descrição: " + getDescricao() + " "
+        + "| Preço: " + this.Preco + " "
+        + "| Quantidade: " + this.quantidade + " "
+        + "| Categoria: " +  getCategoria() + " "
+       +System.lineSeparator();
 		}
-		 
-		 
+	
+		
+		
 }

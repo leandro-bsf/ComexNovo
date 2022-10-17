@@ -1,11 +1,14 @@
-package br.com.comex.CategoriaDao;
+package CategoriaDao;
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import br.com.comex.modelo.Categoria;
+
+import modelo.Categoria;
 
 public class CategoriaDao {
     private Connection conexao; 
@@ -21,11 +24,11 @@ public class CategoriaDao {
      	String[] colunaParaRetornar = { "id" };
       	PreparedStatement comando = conexao.prepareStatement(sql, colunaParaRetornar);
      	comando.setString(1,categoria.getDescricao());
-	    comando.setString(2,categoria.getAtiva());
+	    comando.setString(2,categoria.getStatus());
 	    comando.execute();
 	    ResultSet rs = comando.getGeneratedKeys();
 		rs.next();
-		categoria.setId(rs.getLong(1));
+		categoria.setId(rs.getInt(1));
 		comando.close();
     }
     public List<Categoria> listaCategorias() throws SQLException{
@@ -44,18 +47,21 @@ public class CategoriaDao {
     }
     public void ExcluirCategoria(int id ) throws SQLException {
     	
- 	   PreparedStatement stm = conexao.prepareStatement("DELETE FROM COMEX.CATEGORIA WHERE STATUS = 'INATIVA' ");
- 		stm.execute();
- 		Integer linhasModificada = stm.getUpdateCount();
- 		System.out.println(linhasModificada+" Registro excluidos!");
- 		stm.close();
+ 	 String  sql = "delete from comex.categoria where id = ?";
+ 	
+ 	 PreparedStatement ps = conexao.prepareStatement(sql);
+ 	
+ 	 ps.setInt(1, id);
+ 	 ps.execute();
+ 	 ps.close();
+ 	 System.out.println("Categoria Excluida!");
  		
     }
     public void atualizar(Categoria categoria) throws SQLException {
     	 String sql = "update comex.categoria set descricao = ?  status = ?";
     	 PreparedStatement ps = conexao.prepareStatement(sql);
     	 ps.setString(1, categoria.getDescricao());
-    	 ps.setString(2, categoria.getAtiva());
+    	 ps.setString(2, categoria.getStatus());
     	 ps.execute();
     	 ps.close();
     			 
@@ -67,7 +73,7 @@ public class CategoriaDao {
     			 	registro.getString("nome"),
     			 	registro.getString("Status")
     			 );
-    	 categoria.setId(registro.getLong("id"));
+    	 categoria.setId(registro.getInt("id"));
 		return categoria;
     			 
     }
@@ -92,7 +98,7 @@ public class CategoriaDao {
        String sql = "UPDATE COMEX.CATEGORIA SET NOME = ? , STATUS = ? WHERE ID = ?";
        PreparedStatement ps = conexao.prepareStatement(sql);
        ps.setString(1, categoria.getDescricao());
-       ps.setString(2, categoria.getAtiva());
+       ps.setString(2, categoria.getStatus());
        ps.setInt(3, categoria.getId());
        ps.execute();
        ps.close();

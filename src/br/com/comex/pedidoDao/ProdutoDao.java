@@ -1,4 +1,5 @@
-package br.com.comex.ProdutoDao;
+package pedidoDao;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +8,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.comex.modelo.Categoria;
-import br.com.comex.modelo.Produto;
+import modelo.Categoria;
+import modelo.Produto;
+
+
 
 public class ProdutoDao {
 

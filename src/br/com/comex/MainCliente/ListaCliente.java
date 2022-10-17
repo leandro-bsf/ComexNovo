@@ -15,10 +15,14 @@ public class ListaCliente {
 	public static void main(String[] args) throws SQLException {
 		ConnectionFactory   connectionFactory = new ConnectionFactory();
 		Connection  connection  = connectionFactory.testaConexao();
+		
 		ClienteDao clienteDao = new  ClienteDao(connection);
+		
 		List<Cliente> listadeCliente = clienteDao.listaTodas();
 		for(Cliente cliente: listadeCliente) {
-			System.out.println(cliente);
+			System.out.println("Nome:"+cliente.getNome()+"  CPF: " + cliente.getCpf() + 
+					"TELEFONE: "+ cliente.getTelefone() + "RUA:"+cliente.getRua() +"Complemento:"+ cliente.getComplemento()
+					+ "Bairro: " +cliente.getBairro()+ "  UF: "+ cliente.getUfs());
 		}
 		
 		

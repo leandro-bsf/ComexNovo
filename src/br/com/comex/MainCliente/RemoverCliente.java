@@ -1,6 +1,7 @@
 package br.com.comex.MainCliente;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import br.com.comex.CategoriaDao.CategoriaDao;
 import br.com.comex.ClienteDao.ClienteDao;
@@ -12,13 +13,14 @@ public class RemoverCliente {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		ConnectionFactory   connectionFactory = new ConnectionFactory();
 		Connection  connection  = connectionFactory.testaConexao();
 		ClienteDao clienteDao = new ClienteDao(connection);
-		clienteDao.ExcluirCategoria(0);
+		clienteDao.ExcluirCliente(88);
 		
 		connection.close();
+
 	}
 
 }

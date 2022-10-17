@@ -16,9 +16,7 @@ public class MainListagemCategoria {
 		CategoriaDao  categoriaDao = new CategoriaDao(conexao);
 		
 	   List<Categoria> listacat = categoriaDao.listaCategorias();
-	   for (Categoria cat: listacat) {
-			  System.out.println( cat);
-		  }
+	   	System.out.println(listacat);
 		
 	}
 

@@ -12,45 +12,52 @@ public  class Categoria {
 		Descricao = descricao;
 		Status = status;
 		
+		
 	}
-
-	
+  public Categoria(int id) {
+	  
+  }
 	public Categoria(int id, String descricao, String status) {
 		status = status.toUpperCase();  
 		Descricao = descricao;
 		Status = status;
+		this.Id = id;
 		
-		System.out.println("Cadastrado com sucesso!");
 	}
 
-
-	public int getId() {
-		return Id;
-	}
-    public void setId(long l) {
-		this.Id = (int) l;
-	}
-	
-
-	public String getDescricao() {
-		return Descricao;
-	}
-	public void setDescricao(String descricao) {
-		Descricao = descricao;
-	}
-	public String getAtiva() {
-		return Status;
-	}
-	public void setAtiva(String ativa) {
-		Status = ativa;
-	}
-	public void  print () {
-		System.out.printf("id: %d - Descricao: %s  - Situacao: %s \n ", getId() , getDescricao() , getAtiva());
-	}
+ @Override
    public String toString() {
-	   return String.format("ID: %s - Nome: %S -  Status :%S", 
+	   return String.format("ID: %s - Nome: %S -  Status :%S \n", 
 			   this.Id , this.Descricao , this.Status);
    }
+
+public int getId() {
+	return Id;
+}
+
+public void setId(int id) {
+	Id = id;
+}
+
+public String getDescricao() {
+	return Descricao;
+}
+
+public void setDescricao(String descricao) {
+	Descricao = descricao;
+}
+
+public String getStatus() {
+	return Status;
+}
+
+public void setStatus(String status) {
+	Status = status;
+}
+
+
+
+
 
 	 
 }

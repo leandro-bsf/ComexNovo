@@ -12,12 +12,11 @@ public class listaProduto {
 
 	public static void main(String[] args) throws SQLException {
 		  Connection conexao = new ConnectionFactory(). testaConexao();
-		  ProdutoDao produtoDao = new ProdutoDao(conexao);
-		  
-		 List<Produto>listadeProdutos = produtoDao.listaTodas();
-		/*for(Produto produto: listadeProdutos) {
-			 System.out.println(produto);
-		 }*/
+		
+	
+		 ProdutoDao produtodao = new ProdutoDao(conexao);
+		 produtodao.listaTodas();
+		
 		  
     conexao.close();
 	}

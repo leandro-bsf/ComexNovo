@@ -1,13 +1,12 @@
-package br.com.comex.MainCategoria;
+package MainCategoria;
+
 
 import java.sql.Connection;
-
-
 import java.sql.SQLException;
 
-import br.com.comex.CategoriaDao.CategoriaDao;
-import br.com.comex.ConnectionFactory.ConnectionFactory;
-import br.com.comex.modelo.Categoria;
+import CategoriaDao.CategoriaDao;
+import ConnectionFactory.ConnectionFactory;
+import modelo.Categoria;
 
 public class MainAtualizaCategoria {
 
@@ -16,12 +15,12 @@ public class MainAtualizaCategoria {
 		 Connection  connection  = connectionFactory.testaConexao();
 		CategoriaDao categoriaDao = new CategoriaDao(connection);
 		
-		Categoria  categoria = categoriaDao.buscaPorId(179);
-		categoria.setDescricao("livros Tecnicos");
-		categoria.setAtiva("INATIVA");
+		Categoria  categoria = categoriaDao.buscaPorId(208);
+		categoria.setDescricao("Materia de Limpesa");
+		categoria.setStatus("ATIVA");
 		categoriaDao.altera(categoria);
 		connection.close();
-		System.out.println("Categoria alterada com sucesso!");
+		
 		
 		
 		

@@ -13,11 +13,11 @@ public class Cliente {
 
 
 public Cliente( String nome, String cpf, String telefone, String rua, String numero, String complemento,
-			String bairro, String cidade, Estados estado, Status status) {
+			String bairro, String cidade, Estados estado) {
 		super();
 		   numero = numero.toUpperCase();
 		 
-		  if(nome.length() <= 5 || nome == null) {
+		/*  if(nome.length() <= 5 || nome == null) {
 			  throw new IllegalArgumentException("nome deve ter mais 5 caracteres");
 			  
 		  }
@@ -41,7 +41,7 @@ public Cliente( String nome, String cpf, String telefone, String rua, String num
 		  if(cidade.length() <=   1 ) {
 			  throw new IllegalArgumentException("Cidade deve ter mais  que 1 caracterer");
 			  
-		  }
+		  }*/
 		 
 		Nome = nome;
 		Cpf = cpf;
@@ -57,27 +57,14 @@ public Cliente( String nome, String cpf, String telefone, String rua, String num
 	}
 
 	
-
-	public Cliente(int id, String nome, String cpf, String telefone, String rua, String numero, String complemento,
-		String bairro, String cidade, Status status, Estados ufs) {
-	super();
-	Id = id;
-	Nome = nome;
-	Cpf = cpf;
-	Telefone = telefone;
-	Rua = rua;
-	Numero = numero;
-	Complemento = complemento;
-	Bairro = bairro;
-	Cidade = cidade;
-	this.status = status;
-	this.ufs = ufs;
+public Cliente(int id) {
+	this.Id  = id;
 }
 
 
 
-	public Cliente(String nome, String cpf, String telefone, String rua, String numero, String complemento, String bairro,
-		String cidade, Estados ufs) {
+	public Cliente(int id ,String nome, String cpf, String telefone, String rua, String numero, String complemento, String bairro,
+		String cidade) {
 	super();
 	Nome = nome;
 	Cpf = cpf;
@@ -87,18 +74,12 @@ public Cliente( String nome, String cpf, String telefone, String rua, String num
 	Complemento = complemento;
 	Bairro = bairro;
 	Cidade = cidade;
-	this.ufs = ufs;
+	//this.ufs = ufs;
 }
-
-
-
-	
-
-
-	public Cliente(int int1, String string, String string2, String string3, String string4, String string5,
-			String string6, String string7, String string8, String string9) {
-		// TODO Auto-generated constructor stub
+	public Cliente () {
+		
 	}
+
 
 
 
@@ -173,5 +154,24 @@ public String toString() {
      this.Rua,this.Numero, this.Complemento , this.Bairro , this.Cidade , this.ufs);
 
 	}
+
+
+
+public void setNome(String nome) {
+	Nome = nome;
+}
+
+
+
+public void setTelefone(String telefone) {
+	Telefone = telefone;
+}
+
+
+
+
+
+
+
 
 }

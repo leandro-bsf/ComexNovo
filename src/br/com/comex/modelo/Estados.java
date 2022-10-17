@@ -27,6 +27,6 @@ public enum Estados {
 	SC,
 	SP,
 	SE,
-	TO,
+	TO, 
 
 }

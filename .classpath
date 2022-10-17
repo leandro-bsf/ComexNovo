@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="br/com/comex/|br/com/comex/main/" kind="src" path="src"/>
+	<classpathentry excluding="main/" kind="src" path="src/br/com/comex"/>
+	<classpathentry kind="src" path="src/br/com/comex/main"/>
+	<classpathentry kind="lib" path="libs/ojdbc8-21.7.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

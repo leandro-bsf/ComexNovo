@@ -13,7 +13,7 @@ public class MainRemocaoCategoria {
 		ConnectionFactory   connectionFactory = new ConnectionFactory();
 		Connection  connection  = connectionFactory.testaConexao();
 		CategoriaDao categoriaDao = new CategoriaDao(connection);
-		categoriaDao.ExcluirCategoria(173);
+		categoriaDao.ExcluirCategoria(208);
 		categoriaDao.listaCategorias();
 		connection.close();
 
