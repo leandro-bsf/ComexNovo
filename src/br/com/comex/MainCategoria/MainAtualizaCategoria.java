@@ -1,12 +1,13 @@
-package MainCategoria;
-
+package br.com.comex.MainCategoria;
 
 import java.sql.Connection;
+
+
 import java.sql.SQLException;
 
-import CategoriaDao.CategoriaDao;
-import ConnectionFactory.ConnectionFactory;
-import modelo.Categoria;
+import br.com.comex.CategoriaDao.CategoriaDao;
+import br.com.comex.ConnectionFactory.ConnectionFactory;
+import br.com.comex.modelo.Categoria;
 
 public class MainAtualizaCategoria {
 

@@ -1,4 +1,6 @@
-package br.com.comex.PedidoDao;
+package br.com.comex.pedidoDao;
+
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

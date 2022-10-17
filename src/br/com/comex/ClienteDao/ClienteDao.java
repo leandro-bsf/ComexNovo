@@ -1,6 +1,4 @@
-opackage ClienteDao;
-
-
+package br.com.comex.ClienteDao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.Cliente;
-import modelo.Estados;
+import br.com.comex.modelo.Categoria;
+import br.com.comex.modelo.Cliente;
+import br.com.comex.modelo.Estados;
 
 
 public class ClienteDao {

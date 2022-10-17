@@ -7,9 +7,11 @@ import java.sql.SQLException;
 
 import br.com.comex.ClienteDao.ClienteDao;
 import br.com.comex.ConnectionFactory.ConnectionFactory;
-import br.com.comex.PedidoDao.pedidoDao;
+
 import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Estados;
+import br.com.comex.pedidoDao.pedidoDao;
+
 
 public class inserePedido {
 

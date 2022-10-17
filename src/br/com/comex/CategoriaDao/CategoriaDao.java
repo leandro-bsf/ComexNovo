@@ -1,14 +1,11 @@
-package CategoriaDao;
-
-
+package br.com.comex.CategoriaDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import modelo.Categoria;
+import br.com.comex.modelo.Categoria;
 
 public class CategoriaDao {
     private Connection conexao; 
