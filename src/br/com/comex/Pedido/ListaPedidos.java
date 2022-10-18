@@ -23,7 +23,7 @@ public class ListaPedidos {
 		System.out.println(listadeCliente);
 		
 		
-		System.out.println("teste");
+	
 	}
 
 }
