@@ -8,7 +8,7 @@ import br.com.comex.ConnectionFactory.ConnectionFactory;
 import br.com.comex.ProdutoDao.ProdutoDao;
 import br.com.comex.modelo.Produto;
 
-public class listaProduto {
+public class ListaProduto {
 
 	public static void main(String[] args) throws SQLException {
 		  Connection conexao = new ConnectionFactory(). testaConexao();

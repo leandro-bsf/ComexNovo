@@ -5,10 +5,12 @@ package br.com.comex.Pedido;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import ClienteDao.ClienteDao;
-import ConnectionFactory.ConnectionFactory;
-import modelo.Cliente;
-import modelo.Estados;
+import br.com.comex.ClienteDao.ClienteDao;
+import br.com.comex.ConnectionFactory.ConnectionFactory;
+import br.com.comex.PedidoDao.PedidoDao;
+import br.com.comex.modelo.Cliente;
+import br.com.comex.modelo.Estados;
+
 
 public class InserePedido {
 
@@ -27,7 +29,7 @@ public class InserePedido {
 			clienteDao.insereCliente(Dioavana);
 		
 		
-			pediodoDao P1 = new  PedidoDao(conexao);
+			PedidoDao P1 = new  PedidoDao(conexao);
 			P1.inserePedido("17/10/2022", Dioavana);
 			
 			conexao.close();
