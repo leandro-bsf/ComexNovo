@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.comex.ConnectionFactory.ConnectionFactory;
-import br.com.comex.PedidoDao.pedidoDao;
+import br.com.comex.PedidoDao.PedidoDao;
 import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Pedido;
 
@@ -16,7 +16,7 @@ public class ListaPedidos {
 		ConnectionFactory   connectionFactory = new ConnectionFactory();
 		Connection  connection  = connectionFactory.testaConexao();
 		
-		pedidoDao p1 =  new pedidoDao(connection);
+		PedidoDao p1 =  new PedidoDao(connection);
 		
 		List<Pedido> listadeCliente = p1.listaPedidos();
 		

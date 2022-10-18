@@ -1,4 +1,4 @@
-package Pedido;
+package br.com.comex.Pedido;
 
 
 
@@ -10,7 +10,7 @@ import ConnectionFactory.ConnectionFactory;
 import modelo.Cliente;
 import modelo.Estados;
 
-public class inserePedido {
+public class InserePedido {
 
 	
 		public static void main(String[] args) throws SQLException {
@@ -27,7 +27,7 @@ public class inserePedido {
 			clienteDao.insereCliente(Dioavana);
 		
 		
-			pediodoDao P1 = new  pedidoDao(conexao);
+			pediodoDao P1 = new  PedidoDao(conexao);
 			P1.inserePedido("17/10/2022", Dioavana);
 			
 			conexao.close();

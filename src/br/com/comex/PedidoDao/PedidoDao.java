@@ -10,13 +10,13 @@ import java.util.List;
 import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Pedido;
 
-public class pedidoDao {
+public class PedidoDao {
   private Connection conexao;
 
-			public pedidoDao(Connection conexao) {
+			public PedidoDao(Connection conexao) {
 				this.conexao =  conexao;
 			}
-			public pedidoDao(String string, int int1) {
+			public PedidoDao(String string, int int1) {
 				// TODO Auto-generated constructor stub
 			}
 			public void  inserePedido(String data , Cliente cliente) throws SQLException {

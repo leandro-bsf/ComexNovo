@@ -11,7 +11,7 @@ import br.com.comex.PedidoDao.PedidoDao;
 import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Estados;
 
-public class InserePedido {
+public class InserePedido2 {
 
 	
 		public static void main(String[] args) throws SQLException {

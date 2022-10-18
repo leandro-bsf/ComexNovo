@@ -13,7 +13,7 @@ import br.com.comex.ProdutoDao.ProdutoDao;
 import br.com.comex.modelo.Categoria;
 import br.com.comex.modelo.Produto;
 
-public class insereProduto {
+public class InsereProduto {
 
 	public static void main(String[] args) throws SQLException {
 		Categoria informatica = new Categoria("notebook","ATIVA");
