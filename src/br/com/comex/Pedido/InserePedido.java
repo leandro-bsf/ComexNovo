@@ -5,9 +5,8 @@ package br.com.comex.Pedido;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import br.com.comex.ClienteDao.ClienteDao;
+import br.com.comex.Cliente.ClienteDao;
 import br.com.comex.ConnectionFactory.ConnectionFactory;
-import br.com.comex.PedidoDao.PedidoDao;
 import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Estados;
 
@@ -19,10 +18,10 @@ public class InserePedido {
 			
 			
 			
-			Connection conexao = new ConnectionFactory().testaConexao();
+			Connection conexao = new ConnectionFactory().inicarConexao();
 			
 			Cliente Dioavana = 
-					new Cliente("Diovana","020552659556", "422626256555", "Rua tenente camargo", "S/N", 
+					new Cliente("Diovana lima","055552659556", "422626256555", "Rua tenente camargo", "S/N", 
 							"predio branco", "centro","Francisco beltrao", Estados.PR );
 			
 			ClienteDao clienteDao = new ClienteDao(conexao);

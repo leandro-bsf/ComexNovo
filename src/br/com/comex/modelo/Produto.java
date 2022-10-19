@@ -22,26 +22,13 @@ public class Produto {
 			Nome = nome;
 			Descricao = descricao;
 			Preco = preco;
-		
-			//this.categoria = categoria;
-			this.tipo =  status;
-		}
-		public Produto(int id , String nome, String descricao, Float preco,int quantidade , int id_categoria,String status) {
-			this.id = id;
-			this.quantidade = quantidade;
-			Nome = nome;
-			Descricao = descricao;
-			Preco = preco;
-			//this.categoria = categoria;
+			this.categoria = categoria;
 			this.tipo =  status;
 		}
 		
 		
 		
-		public Produto(int int1, String string, String string2, float float1, int int2, Categoria categoria2,
-				String string3) {
-			// TODO Auto-generated constructor stub
-		}
+		
 		public int getId() {
 			return id;
 		}

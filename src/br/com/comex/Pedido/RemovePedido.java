@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import br.com.comex.ConnectionFactory.ConnectionFactory;
-import br.com.comex.PedidoDao.PedidoDao;
-import br.com.comex.ProdutoDao.ProdutoDao;
+import br.com.comex.Produto.ProdutoDao;
 
 public class RemovePedido {
 
@@ -13,9 +12,9 @@ public class RemovePedido {
 
 	public static void main(String[] args) throws SQLException {
 		ConnectionFactory   connectionFactory = new ConnectionFactory();
-		Connection  connection  = connectionFactory.testaConexao();
+		Connection  connection  = connectionFactory.inicarConexao();
 		PedidoDao pedidodao = new PedidoDao(connection);
-		pedidodao.removePedido(9);
+		pedidodao.removePedido(3);
 		
 		
 		

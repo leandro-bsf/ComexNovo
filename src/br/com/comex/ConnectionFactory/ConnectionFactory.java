@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
      
-	public Connection testaConexao() {
+	public Connection inicarConexao() {
 		
 		
 		try {
