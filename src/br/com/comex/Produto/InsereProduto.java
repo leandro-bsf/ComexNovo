@@ -1,15 +1,12 @@
-package br.com.comex.MainProduto;
+package br.com.comex.Produto;
 
 
 import java.sql.Connection;
 
 import java.sql.SQLException;
 
-
-import br.com.comex.CategoriaDao.CategoriaDao;
+import br.com.comex.Categoria.CategoriaDao;
 import br.com.comex.ConnectionFactory.ConnectionFactory;
-
-import br.com.comex.ProdutoDao.ProdutoDao;
 import br.com.comex.modelo.Categoria;
 import br.com.comex.modelo.Produto;
 
