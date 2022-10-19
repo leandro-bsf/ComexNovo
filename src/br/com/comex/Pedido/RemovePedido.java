@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import br.com.comex.ConnectionFactory.ConnectionFactory;
-import br.com.comex.PedidoDao.PedidoDao;
-import br.com.comex.ProdutoDao.ProdutoDao;
+import br.com.comex.Produto.ProdutoDao;
 
 public class RemovePedido {
 

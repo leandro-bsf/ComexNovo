@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.comex.ConnectionFactory.ConnectionFactory;
-import br.com.comex.PedidoDao.PedidoDao;
 import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Pedido;
 

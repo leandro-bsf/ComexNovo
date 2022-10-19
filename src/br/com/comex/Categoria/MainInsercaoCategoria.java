@@ -1,9 +1,8 @@
-package br.com.comex.MainCategoria;
+package br.com.comex.Categoria;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import br.com.comex.CategoriaDao.CategoriaDao;
 import br.com.comex.ConnectionFactory.ConnectionFactory;
 import br.com.comex.modelo.Categoria;
 

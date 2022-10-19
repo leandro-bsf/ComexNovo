@@ -1,10 +1,9 @@
-package br.com.comex.MainProduto;
+package br.com.comex.Produto;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 import br.com.comex.ConnectionFactory.ConnectionFactory;
-import br.com.comex.ProdutoDao.ProdutoDao;
 
 public class MainRemocaoProduto {
 

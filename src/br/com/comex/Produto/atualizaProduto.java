@@ -1,4 +1,4 @@
-package br.com.comex.MainProduto;
+package br.com.comex.Produto;
 
 public class AtualizaProduto {
 

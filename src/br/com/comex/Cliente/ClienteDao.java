@@ -1,4 +1,4 @@
-package br.com.comex.ClienteDao;
+package br.com.comex.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

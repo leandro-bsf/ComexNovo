@@ -1,4 +1,4 @@
-package br.com.comex.PedidoDao;
+package br.com.comex.Pedido;
 
 
 

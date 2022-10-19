@@ -1,10 +1,9 @@
-package br.com.comex.MainCliente;
+package br.com.comex.Cliente;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.comex.ClienteDao.ClienteDao;
 import br.com.comex.ConnectionFactory.ConnectionFactory;
 import br.com.comex.modelo.Cliente;
 

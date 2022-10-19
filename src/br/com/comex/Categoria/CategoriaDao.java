@@ -1,4 +1,4 @@
-package br.com.comex.CategoriaDao;
+package br.com.comex.Categoria;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

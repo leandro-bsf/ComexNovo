@@ -1,31 +1,21 @@
-package br.com.comex.PedidoMain;
-
-
+package br.com.comex.Categoria;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
 
 import br.com.comex.ConnectionFactory.ConnectionFactory;
 
-import br.com.comex.modelo.Pedido;
-import br.com.comex.pedidoDao.PedidoDao;
-
-public class ListaPedidos {
-
+public class MainRemocaoCategoria {
 
 	public static void main(String[] args) throws SQLException {
 		ConnectionFactory   connectionFactory = new ConnectionFactory();
 		Connection  connection  = connectionFactory.testaConexao();
-		
-		PedidoDao p1 =  new PedidoDao(connection);
-		
-		List<Pedido> listadeCliente = p1.listaPedidos();
-		
-		System.out.println(listadeCliente);
-		
-		
-		
+		CategoriaDao categoriaDao = new CategoriaDao(connection);
+		categoriaDao.ExcluirCategoria(208);
+		categoriaDao.listaCategorias();
+		connection.close();
+
 	}
 
 }

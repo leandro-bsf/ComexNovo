@@ -1,10 +1,9 @@
-package br.com.comex.MainCliente;
+package br.com.comex.Cliente;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import br.com.comex.CategoriaDao.CategoriaDao;
-import br.com.comex.ClienteDao.ClienteDao;
+import br.com.comex.Categoria.CategoriaDao;
 import br.com.comex.ConnectionFactory.ConnectionFactory;
 
 public class RemoverCliente {

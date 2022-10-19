@@ -5,9 +5,8 @@ package br.com.comex.Pedido;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import br.com.comex.ClienteDao.ClienteDao;
+import br.com.comex.Cliente.ClienteDao;
 import br.com.comex.ConnectionFactory.ConnectionFactory;
-import br.com.comex.PedidoDao.PedidoDao;
 import br.com.comex.modelo.Cliente;
 import br.com.comex.modelo.Estados;
 

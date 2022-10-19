@@ -1,11 +1,10 @@
-package br.com.comex.MainProduto;
+package br.com.comex.Produto;
 
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import br.com.comex.ConnectionFactory.ConnectionFactory;
-import br.com.comex.ProdutoDao.ProdutoDao;
 import br.com.comex.modelo.Produto;
 
 public class ListaProduto {
