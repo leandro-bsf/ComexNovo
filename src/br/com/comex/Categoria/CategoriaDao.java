@@ -54,6 +54,18 @@ public class CategoriaDao {
  	 System.out.println("Categoria Excluida!");
  		
     }
+    public void ExcluirCategoriaInativa( ) throws SQLException {
+    	String Condicacao = "INATIVA";
+    	 String  sql = "delete from comex.categoria where status = ?";
+    	
+    	 PreparedStatement ps = conexao.prepareStatement(sql);
+    	
+    	 ps.setString(1, Condicacao);
+    	 ps.execute();
+    	 ps.close();
+    	 System.out.println("Categoria Excluida!");
+    		
+       }
     public void atualizar(Categoria categoria) throws SQLException {
     	 String sql = "update comex.categoria set descricao = ?  status = ?";
     	 PreparedStatement ps = conexao.prepareStatement(sql);
