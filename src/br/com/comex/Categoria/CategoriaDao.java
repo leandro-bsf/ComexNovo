@@ -5,6 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
 import br.com.comex.modelo.Categoria;
 
 public class CategoriaDao {
@@ -36,10 +39,7 @@ public class CategoriaDao {
     		while(registros.next()) {
     			categorias.add(this.populaCategoria(registros));
     		}
-    	
-    		
-    	
-	  
+    		  
 	   registros.close();
 	   return categorias;
     }

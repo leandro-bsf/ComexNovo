@@ -2,7 +2,7 @@ package br.com.comex.modelo;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+
 public  class Categoria {
 
       private int Id;
@@ -31,12 +31,12 @@ public  class Categoria {
 		
 	}
 
- @Override
-   public String toString() {
-	   return String.format("ID: %s - Nome: %S -  Status :%S \n", 
-			   this.Id , this.Descricao , this.Status);
-   }
 
+
+@Override
+	public String toString() {
+		return "Categoria [Id=" + Id + ", Descricao=" + Descricao + ", Status=" + Status + "]";
+	}
 public int getId() {
 	return Id;
 }

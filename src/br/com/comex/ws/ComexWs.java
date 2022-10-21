@@ -37,6 +37,7 @@ public class ComexWs {
 		 
 		 return lista ;
 		 }
+		
 		@WebMethod(operationName="listaCliente")
 	    @WebResult(name="cliente")
 		public List<Cliente> getCliente() throws SQLException{
@@ -62,12 +63,13 @@ public class ComexWs {
 			return categoriadao;
 		 
 	}
+		
 		@WebMethod(operationName="CadastraCliente")
 	    @WebResult(name="cliente")
-		public ClienteDao  insereCliente(@WebParam(name="cliente" )Cliente cliente) throws SQLException {
-			System.out.println("chamando getInsereCliente"+ cliente);
-			clienteDao.insereCliente(cliente);
-			return clienteDao;
+		public Cliente  insereCliente(Cliente cliente1) throws SQLException {
+			System.out.println("chamando getInsereCliente"+ cliente1);
+			clienteDao.insereCliente(cliente1);
+			return cliente1;
 			
 		}
 }

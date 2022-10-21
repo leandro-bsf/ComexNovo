@@ -1,5 +1,8 @@
 package br.com.comex.modelo;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+
 public class Cliente {
   int Id ;
   String Nome , Cpf, Telefone , Rua,Numero,Complemento, Bairro, Cidade ;
@@ -53,12 +56,134 @@ public Cliente( String nome, String cpf, String telefone, String rua, String num
 		Cidade = cidade;
 		
 		this.ufs = estado;
-		this.status = status;
+		this.status= status;
 	}
 
-	
-public Cliente(int id) {
-	this.Id  = id;
+
+
+
+	public String getNome() {
+	return Nome;
+}
+
+
+
+public void setNome(String nome) {
+	Nome = nome;
+}
+
+
+
+public String getCpf() {
+	return Cpf;
+}
+
+
+
+public void setCpf(String cpf) {
+	Cpf = cpf;
+}
+
+
+
+public String getTelefone() {
+	return Telefone;
+}
+
+
+
+public void setTelefone(String telefone) {
+	Telefone = telefone;
+}
+
+
+
+public String getRua() {
+	return Rua;
+}
+
+
+
+public void setRua(String rua) {
+	Rua = rua;
+}
+
+
+
+public String getNumero() {
+	return Numero;
+}
+
+
+
+public void setNumero(String numero) {
+	Numero = numero;
+}
+
+
+
+public String getComplemento() {
+	return Complemento;
+}
+
+
+
+public void setComplemento(String complemento) {
+	Complemento = complemento;
+}
+
+
+
+public String getBairro() {
+	return Bairro;
+}
+
+
+
+public void setBairro(String bairro) {
+	Bairro = bairro;
+}
+
+
+
+public String getCidade() {
+	return Cidade;
+}
+
+
+
+public void setCidade(String cidade) {
+	Cidade = cidade;
+}
+
+
+
+public Status getStatus() {
+	return status;
+}
+
+
+
+public void setStatus(Status status) {
+	this.status = status;
+}
+
+
+
+public Estados getUfs() {
+	return ufs;
+}
+
+
+
+public void setUfs(Estados ufs) {
+	this.ufs = ufs;
+}
+
+
+
+public int getId() {
+	return Id;
 }
 
 
@@ -76,138 +201,17 @@ public Cliente(int id) {
 	Cidade = cidade;
 	//this.ufs = ufs;
 }
+	
+
 	public Cliente () {
 		
 	}
 
-
-
-
-	public int getId() {
-	return Id;
-}
-
-public String getNome() {
-	return Nome;
-}
-
-public String getCpf() {
-	return Cpf;
-}
-
-public String getTelefone() {
-	return Telefone;
-}
-
-public String getRua() {
-	return Rua;
-}
-
-public String getNumero() {
-	return Numero;
-}
-
-public String getComplemento() {
-	return Complemento;
-}
-
-public String getBairro() {
-	return Bairro;
-}
-
-public String getCidade() {
-	return Cidade;
-}
-
-
-
-public Estados getUfs() {
-	return ufs;
-}
-
-public void setUfs(Estados ufs) {
-	this.ufs = ufs;
-}
-
-public Status getStatus() {
-	return status;
-}
-
-public void setStatus(Status status) {
-	this.status = status;
-}
-
-public void setCpf(String cpf) {
-	Cpf = cpf;
-}
-
-
-
-public void setRua(String rua) {
-	Rua = rua;
-}
-
-
-
-public void setNumero(String numero) {
-	Numero = numero;
-}
-
-
-
-public void setComplemento(String complemento) {
-	Complemento = complemento;
-}
-
-
-
-public void setBairro(String bairro) {
-	Bairro = bairro;
-}
-
-
-
-public void setCidade(String cidade) {
-	Cidade = cidade;
-}
-
-
-
-public void PrintCliente() {
-
-	System.out.printf("|"+ getId()+"|"+ getNome() +"|"+  getCpf() +"|"+ getTelefone() +"|"+  getRua() +"|"+  getNumero() +"|"+ 
-			getComplemento()+"|"+ getBairro() +"|"+ getCidade() +"|"+ getUfs());
-	
-	System.out.println();
-	System.out.println("Cliente Inserido!\n");
-	
-}
+@Override
 public String toString() {
-
-	
-	return String.format("ID: %s  - Nome: %S cpf: %s  - telefone: %S - rua: %S  numero: %s complemento: %S   bairro: %s cidade: %s  UF: %s",
-			this.Id , getNome() , this.Cpf ,this.Telefone,
-     this.Rua,this.Numero, this.Complemento , this.Bairro , this.Cidade , this.ufs);
-
-	}
-
-
-
-public void setNome(String nome) {
-	Nome = nome;
+	return "Cliente [Id=" + Id + ", Nome=" + Nome + ", Cpf=" + Cpf + ", Telefone=" + Telefone + ", Rua=" + Rua
+			+ ", Numero=" + Numero + ", Complemento=" + Complemento + ", Bairro=" + Bairro + ", Cidade=" + Cidade
+			+ ", status=" + status + ", ufs=" + ufs + "]";
 }
-
-
-
-public void setTelefone(String telefone) {
-	Telefone = telefone;
-}
-
-
-
-
-
-
-
 
 }

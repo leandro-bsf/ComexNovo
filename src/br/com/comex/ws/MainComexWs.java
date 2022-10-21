@@ -13,7 +13,7 @@ public class MainComexWs {
 		
 		System.out.println("Servico Rodando" + url + "?wsdl");
 		Endpoint.publish(url, service);
-		
+		//http://localhost:8080/ComexWs?wsdl
 	}
 
 }

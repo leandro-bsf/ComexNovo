@@ -37,8 +37,11 @@ public class ClienteDao {
 		ResultSet rs = comando.getGeneratedKeys();
 		rs.next();
 		cliente.setId(rs.getInt(1));
+	
 		System.out.println("Cliente  "+ cliente.getNome()+ " Inserido com sucesso");
 		comando.close();
+		rs.close();
+		
 		
 	}
 	
