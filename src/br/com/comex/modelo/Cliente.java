@@ -137,6 +137,42 @@ public void setStatus(Status status) {
 	this.status = status;
 }
 
+public void setCpf(String cpf) {
+	Cpf = cpf;
+}
+
+
+
+public void setRua(String rua) {
+	Rua = rua;
+}
+
+
+
+public void setNumero(String numero) {
+	Numero = numero;
+}
+
+
+
+public void setComplemento(String complemento) {
+	Complemento = complemento;
+}
+
+
+
+public void setBairro(String bairro) {
+	Bairro = bairro;
+}
+
+
+
+public void setCidade(String cidade) {
+	Cidade = cidade;
+}
+
+
+
 public void PrintCliente() {
 
 	System.out.printf("|"+ getId()+"|"+ getNome() +"|"+  getCpf() +"|"+ getTelefone() +"|"+  getRua() +"|"+  getNumero() +"|"+ 
@@ -149,7 +185,7 @@ public void PrintCliente() {
 public String toString() {
 
 	
-	return String.format("ID: %s  - Nome: %S cpf: %s  - telefone: %S - rua: %f  numero: %s complemento: %d   bairro: %s cidade: %s  UF: %s",
+	return String.format("ID: %s  - Nome: %S cpf: %s  - telefone: %S - rua: %S  numero: %s complemento: %S   bairro: %s cidade: %s  UF: %s",
 			this.Id , getNome() , this.Cpf ,this.Telefone,
      this.Rua,this.Numero, this.Complemento , this.Bairro , this.Cidade , this.ufs);
 

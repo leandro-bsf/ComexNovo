@@ -11,7 +11,7 @@ import br.com.comex.modelo.Categoria;
 public class MainInsercaoCategoria {
 	public static void main(String[] args) throws SQLException {
 
-		Categoria informatica =  new Categoria("informatica", "ATIVA");
+		Categoria informatica =  new Categoria("Monitores", "ATIVA");
 		
 		Connection conexao = new ConnectionFactory().inicarConexao();
 		CategoriaDao categoriadao = new CategoriaDao(conexao);

@@ -1,5 +1,8 @@
 package br.com.comex.modelo;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public  class Categoria {
 
       private int Id;
@@ -12,6 +15,9 @@ public  class Categoria {
 		Descricao = descricao;
 		Status = status;
 		
+		
+	}
+	public Categoria () {
 		
 	}
   public Categoria(int id) {
