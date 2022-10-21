@@ -57,10 +57,10 @@ public class ComexWs {
 		}
 		@WebMethod(operationName="CadastrarCategoria")
 	    @WebResult(name="categoria")
-	public CategoriaDao insere(@WebParam(name="categoria") Categoria categoria1 ) throws SQLException {
+	public Categoria insere(@WebParam(name="categoria") Categoria categoria1 ) throws SQLException {
 			System.out.println("chamando getInsereCategoria"+ categoria1);
 			categoriadao.insere(categoria1);
-			return categoriadao;
+			return categoria1;
 		 
 	}
 		

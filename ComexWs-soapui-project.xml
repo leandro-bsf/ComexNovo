@@ -22,11 +22,11 @@
   <message name="listaClienteResponse">
     <part name="parameters" element="tns:listaClienteResponse"/>
   </message>
-  <message name="CadastraCliente">
-    <part name="parameters" element="tns:CadastraCliente"/>
+  <message name="listaProduto">
+    <part name="parameters" element="tns:listaProduto"/>
   </message>
-  <message name="CadastraClienteResponse">
-    <part name="parameters" element="tns:CadastraClienteResponse"/>
+  <message name="listaProdutoResponse">
+    <part name="parameters" element="tns:listaProdutoResponse"/>
   </message>
   <message name="CadastrarCategoria">
     <part name="parameters" element="tns:CadastrarCategoria"/>
@@ -34,11 +34,11 @@
   <message name="CadastrarCategoriaResponse">
     <part name="parameters" element="tns:CadastrarCategoriaResponse"/>
   </message>
-  <message name="listaProduto">
-    <part name="parameters" element="tns:listaProduto"/>
+  <message name="CadastraCliente">
+    <part name="parameters" element="tns:CadastraCliente"/>
   </message>
-  <message name="listaProdutoResponse">
-    <part name="parameters" element="tns:listaProdutoResponse"/>
+  <message name="CadastraClienteResponse">
+    <part name="parameters" element="tns:CadastraClienteResponse"/>
   </message>
   <portType name="ComexWs">
     <operation name="listaCategorias">
@@ -51,20 +51,20 @@
       <output wsam:Action="http://ws.comex.com.br/ComexWs/listaClienteResponse" message="tns:listaClienteResponse"/>
       <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWs/listaCliente/Fault/SQLException"/>
     </operation>
-    <operation name="CadastraCliente">
-      <input wsam:Action="http://ws.comex.com.br/ComexWs/CadastraClienteRequest" message="tns:CadastraCliente"/>
-      <output wsam:Action="http://ws.comex.com.br/ComexWs/CadastraClienteResponse" message="tns:CadastraClienteResponse"/>
-      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWs/CadastraCliente/Fault/SQLException"/>
+    <operation name="listaProduto">
+      <input wsam:Action="http://ws.comex.com.br/ComexWs/listaProdutoRequest" message="tns:listaProduto"/>
+      <output wsam:Action="http://ws.comex.com.br/ComexWs/listaProdutoResponse" message="tns:listaProdutoResponse"/>
+      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWs/listaProduto/Fault/SQLException"/>
     </operation>
     <operation name="CadastrarCategoria">
       <input wsam:Action="http://ws.comex.com.br/ComexWs/CadastrarCategoriaRequest" message="tns:CadastrarCategoria"/>
       <output wsam:Action="http://ws.comex.com.br/ComexWs/CadastrarCategoriaResponse" message="tns:CadastrarCategoriaResponse"/>
       <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWs/CadastrarCategoria/Fault/SQLException"/>
     </operation>
-    <operation name="listaProduto">
-      <input wsam:Action="http://ws.comex.com.br/ComexWs/listaProdutoRequest" message="tns:listaProduto"/>
-      <output wsam:Action="http://ws.comex.com.br/ComexWs/listaProdutoResponse" message="tns:listaProdutoResponse"/>
-      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWs/listaProduto/Fault/SQLException"/>
+    <operation name="CadastraCliente">
+      <input wsam:Action="http://ws.comex.com.br/ComexWs/CadastraClienteRequest" message="tns:CadastraCliente"/>
+      <output wsam:Action="http://ws.comex.com.br/ComexWs/CadastraClienteResponse" message="tns:CadastraClienteResponse"/>
+      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ComexWs/CadastraCliente/Fault/SQLException"/>
     </operation>
   </portType>
   <binding name="ComexWsPortBinding" type="tns:ComexWs">
@@ -93,7 +93,7 @@
         <soap:fault name="SQLException" use="literal"/>
       </fault>
     </operation>
-    <operation name="CadastraCliente">
+    <operation name="listaProduto">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -117,7 +117,7 @@
         <soap:fault name="SQLException" use="literal"/>
       </fault>
     </operation>
-    <operation name="listaProduto">
+    <operation name="CadastraCliente">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -214,11 +214,8 @@
   </xs:complexType>
   <xs:complexType name="CadastrarCategoriaResponse">
     <xs:sequence>
-      <xs:element name="categoria" type="tns:categoriaDao" minOccurs="0"/>
+      <xs:element name="categoria" type="tns:categoria" minOccurs="0"/>
     </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="categoriaDao">
-    <xs:sequence/>
   </xs:complexType>
   <xs:complexType name="listaCliente">
     <xs:sequence/>
@@ -250,11 +247,8 @@
   </xs:complexType>
   <xs:complexType name="CadastraClienteResponse">
     <xs:sequence>
-      <xs:element name="cliente" type="tns:clienteDao" minOccurs="0"/>
+      <xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
     </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="clienteDao">
-    <xs:sequence/>
   </xs:complexType>
   <xs:complexType name="listaCategorias">
     <xs:sequence/>
@@ -314,10 +308,10 @@
             <!--Optional:-->\r
             <complemento>teste</complemento>\r
             <!--Optional:-->\r
-            <cpf>09952465567</cpf>\r
+            <cpf>09952465569</cpf>\r
             <id>?</id>\r
             <!--Optional:-->\r
-            <nome>teste3</nome>\r
+            <nome>teste65</nome>\r
             <!--Optional:-->\r
             <numero>S/N</numero>\r
             <!--Optional:-->\r
@@ -331,33 +325,33 @@
          </arg0>\r
       </ws:CadastraCliente>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.comex.com.br/ComexWs/CadastraClienteRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4b2302e0-12b7-4fba-9baf-02653ac129c1" isOneWay="false" action="" name="CadastrarCategoria" bindingOperationName="CadastrarCategoria" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44146919-347d-46cb-914b-621dcb29369e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ComexWs</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.comex.com.br/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.comex.com.br/ComexWs/CadastraClienteRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4b2302e0-12b7-4fba-9baf-02653ac129c1" isOneWay="false" action="" name="CadastrarCategoria" bindingOperationName="CadastrarCategoria" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6ab45e0c-b7cd-4c1b-97c6-dd62ef8c07b7" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ComexWs</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.comex.com.br/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <ws:CadastrarCategoria>\r
          <!--Optional:-->\r
          <categoria>\r
             <!--Optional:-->\r
-            <descricao>?</descricao>\r
+            <descricao>cabos</descricao>\r
             <id>?</id>\r
             <!--Optional:-->\r
-            <status>?</status>\r
+            <status>ATIVA</status>\r
          </categoria>\r
       </ws:CadastrarCategoria>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.comex.com.br/ComexWs/CadastrarCategoriaRequest"/></con:call></con:operation><con:operation id="7e370236-7bd4-4324-8141-7e544ae04e8b" isOneWay="false" action="" name="listaCategorias" bindingOperationName="listaCategorias" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="39e176b9-d439-48b8-9cfd-ca932920b93e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ComexWs</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.comex.com.br/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.comex.com.br/ComexWs/CadastrarCategoriaRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7e370236-7bd4-4324-8141-7e544ae04e8b" isOneWay="false" action="" name="listaCategorias" bindingOperationName="listaCategorias" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="39e176b9-d439-48b8-9cfd-ca932920b93e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ComexWs</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.comex.com.br/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <ws:listaCategorias/>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.comex.com.br/ComexWs/listaCategoriasRequest"/></con:call></con:operation><con:operation id="8c734154-a2a1-4542-bf85-9adbe8be7a1b" isOneWay="false" action="" name="listaCliente" bindingOperationName="listaCliente" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="687a232e-3031-46d0-ae68-51d438f56899" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ComexWs</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.comex.com.br/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.comex.com.br/ComexWs/listaCategoriasRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8c734154-a2a1-4542-bf85-9adbe8be7a1b" isOneWay="false" action="" name="listaCliente" bindingOperationName="listaCliente" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="687a232e-3031-46d0-ae68-51d438f56899" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ComexWs</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.comex.com.br/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <ws:listaCliente/>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.comex.com.br/ComexWs/listaClienteRequest"/></con:call></con:operation><con:operation id="b93df586-9426-4030-a487-e3202ccf321b" isOneWay="false" action="" name="listaProduto" bindingOperationName="listaProduto" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="340e3bc0-8e96-4700-8e4c-a9164cebc9c2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ComexWs</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.comex.com.br/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.comex.com.br/ComexWs/listaClienteRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b93df586-9426-4030-a487-e3202ccf321b" isOneWay="false" action="" name="listaProduto" bindingOperationName="listaProduto" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="340e3bc0-8e96-4700-8e4c-a9164cebc9c2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ComexWs</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.comex.com.br/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <ws:listaProduto/>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.comex.com.br/ComexWs/listaProdutoRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.comex.com.br/ComexWs/listaProdutoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
