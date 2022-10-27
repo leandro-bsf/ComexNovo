@@ -53,7 +53,7 @@ public class PedidoDao {
 			private Pedido populaListaClientes(ResultSet registro) throws SQLException {
 				Pedido pedidos = new Pedido (
 						registro.getString("data"),
-					new Cliente(registro.getInt("cliente_id"))
+				new Cliente (registro.getInt("cliente_id"))
 						);
 				pedidos.setId(registro.getInt("id"));
 						

@@ -65,7 +65,9 @@ public Cliente( String nome, String cpf, String telefone, String rua, String num
 	public String getNome() {
 	return Nome;
 }
-
+public Cliente (int id) {
+	this.Id = id;
+}
 
 
 public void setNome(String nome) {
