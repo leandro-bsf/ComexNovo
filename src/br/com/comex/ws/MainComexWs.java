@@ -8,7 +8,7 @@ public class MainComexWs {
 	
 
 	public static void main(String[] args) {
-		String url = "http://localhost:8080/ComexWs";
+		String url = "http://0.0.0.0:8080/ComexWs";
 		ComexWs service = new ComexWs();
 		
 		System.out.println("Servico Rodando" + url + "?wsdl");
