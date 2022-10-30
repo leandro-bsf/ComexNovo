@@ -1,6 +1,5 @@
 package br.com.comex.ws;
 
-
 import javax.xml.ws.Endpoint;
 
 public class MainComexWs {
@@ -8,7 +7,7 @@ public class MainComexWs {
 	
 
 	public static void main(String[] args) {
-		String url = "http://0.0.0.0:8080/ComexWs";
+		String url = "http://localhost:1521//ComexWs";
 		ComexWs service = new ComexWs();
 		
 		System.out.println("Servico Rodando" + url + "?wsdl");
@@ -17,3 +16,4 @@ public class MainComexWs {
 	}
 
 }
+
